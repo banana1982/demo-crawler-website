@@ -16,6 +16,7 @@ const {
 
 // scotch.io (Base URL)
 const SCOTCH_BASE = "https://scotch.io";
+const VIETLOTTE_BASE = "https://vietlott.vn";
 
 ///////////////////////////////////////////////////////////////////////////////
 // HELPER FUNCTIONS

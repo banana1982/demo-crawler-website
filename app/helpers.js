@@ -83,7 +83,27 @@ const sendResponse = res => async request => {
 const fetchHtmlFromUrl = async url => {
 	return await axios
 		.get(enforceHttpsUrl(url))
-		.then(response => cheerio.load(response.data))
+		.then(response => {
+			cheerio.load(response.data);
+			// const $ = cheerio.load(response.data);
+			// let n = 1;
+			// let res = {
+			// 	title: '',
+			// 	result: [],
+			// 	res_arr: [],
+
+			// };
+			// res.title = $('.chitietketqua_title').text();
+
+			// $('.day_so_ket_qua_v2').children().each(function (i,el) {
+			// 	if($(this).text() !== "|"){
+			// 		res.res_arr[n] = $(this).text(); 
+			// 		res.result.push($(this).text());
+			// 		n++;
+			// 	}
+			// });
+			// console.log(res);
+		})
 		.catch(error => {
 			error.status = (error.response && error.response.status) || 500;
 			throw error;
